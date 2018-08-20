@@ -29,9 +29,4 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password', 'api_token'
     ];
-
-    public function dokumen()
-  {
-    return $this->hasMany('App\Dokumen', 'created_by', 'nip');
-  }
 }

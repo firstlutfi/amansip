@@ -14,12 +14,19 @@ class CreateDokumenkegiatanTable extends Migration
     public function up()
     {
         Schema::create('dokumenkegiatan', function (Blueprint $table) {
-            $table->unsignedInteger('id_dokumen');
-            $table->foreign('id_dokumen')->references('id_dokumen')->on('dokumen')->onDelete('cascade');
+            $table->unsignedInteger('id_dokumen')->primary();
             $table->integer('jenis');
-            $table->string('tentang');
-            $table->date('tanggal_produkhukum');
-            $table->string('file_produkhukum');
+            $table->string('nama_kegiatan');
+            $table->string('lampiran');
+            $table->string('nomor', 100)->unique();
+            $table->string('tempat_kegiatan');
+            $table->date('tanggal_kegiatan');
+            $table->string('waktu_kegiatan');
+            $table->string('pimpinan');
+            $table->string('acara');
+            $table->string('dasar');
+            $table->string('isi');
+            $table->string('file_kegiatan');
         });
     }
 

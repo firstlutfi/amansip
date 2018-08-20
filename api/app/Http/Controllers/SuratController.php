@@ -1,20 +1,34 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Surat;
-use App\Dokumen;
 
 class SuratController extends Controller
 {
-    public function getAll(Request $request)
+    public function getAllSuratMasuk(Request $request)
     {
-        $surat = Surat::all();
+        $surat = Surat::where('jenis', 1)->get();
 
         if($surat){
             $res['success'] = true;
-            $res['message'] = 'Get all surat success';
+            $res['message'] = 'Get all surat masuk success';
+            $res['data'] = $surat;
+        }else{
+            $res['success'] = false;
+            $res['message'] = 'Get all surat failed, something wrong with the request';
+        }
+
+        return response($res);
+    }
+
+    public function getAllSuratKeluar(Request $request)
+    {
+        $surat = Surat::where('jenis', 2)->get();
+
+        if($surat){
+            $res['success'] = true;
+            $res['message'] = 'Get all surat keluar success';
             $res['data'] = $surat;
         }else{
             $res['success'] = false;
@@ -26,7 +40,7 @@ class SuratController extends Controller
 
     public function getOne(Request $request, $id_surat)
     {
-        $surat = Surat::where('id_dokumen', $id_surat)->with(['dokumen'])->first();
+        $surat = Surat::where('id_dokumen', $id_surat)->get();
         
         if($surat != null){
             $res['success'] = true;

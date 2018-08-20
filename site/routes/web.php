@@ -25,7 +25,8 @@ Route::post('register', 'Controller@register')->name('register');
 Route::get('logout', 'Controller@logout')->name('logout');
 
 // Region Surat
-$router->get('/surat', 'SuratController@index');
+$router->get('/surat-masuk', 'SuratController@getAllSuratMasuk')->name('surat-masuk');
+$router->get('/surat-keluar', 'SuratController@getAllSuratKeluar')->name('surat-keluar');
 $router->get('/surat/create', 'SuratController@create')->name('page-create-surat');
 $router->get('/surat/update', 'SuratController@update')->name('page-update-surat');
 $router->get('/surat/delete', 'SuratController@delete')->name('page-delete-surat');

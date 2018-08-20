@@ -22,7 +22,8 @@ $router->get('/logout', 'UserController@logout');
 $router->get('/profile/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@get_user']);
 
 // Region Surat
-$router->get('/surat/get-all', 'SuratController@getAll');
+$router->get('/surat-masuk/get-all', 'SuratController@getAllSuratMasuk');
+$router->get('/surat-keluar/get-all', 'SuratController@getAllSuratKeluar');
 $router->get('/surat/get/{id}', 'SuratController@getOne');
 $router->post('/surat/create', 'SuratController@create');
 $router->post('/surat/update', 'SuratController@update');

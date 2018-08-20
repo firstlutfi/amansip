@@ -1,89 +1,147 @@
 <!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.5
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
-<head>
-    <title>Aplikasi Manajemen Arsip - Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-<!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="libraries/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="libraries/animate/animate.css">
-<!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="libraries/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="libraries/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="libraries/select2/select2.min.css">
-<!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="libraries/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/pages/auth/util.css">
-    <link rel="stylesheet" type="text/css" href="css/pages/auth/main.css">
-<!--===============================================================================================-->
-</head>
-<body>
-    
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100 p-t-85 p-b-20">
-                <form class="login100-form validate-form animated fadeInRightBig" action="{{ route('login') }}" method="POST">
-                {{ csrf_field() }}
-                    <span class="login100-form-title p-b-70">
-                        Welcome
-                    </span>
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
 
-                    <div class="wrap-input100 validate-input m-b-35" data-validate = "Enter username">
-                        <input class="input100" type="text" name="nip">
-                        <span class="focus-input100" data-placeholder="NIP"></span>
-                    </div>
+    <head>
+        <meta charset="utf-8" />
+        <title>AMANSIP | Login Page</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="Aplikasi Manajemen Arsip - AMANSIP" name="description" />
+        <meta content="Lutfi Fitroh Hadi" name="author" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="libraries/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="libraries/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="css/global/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="css/global/plugins-md.min.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="css/pages/login-5.min.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- END HEAD -->
 
-                    <div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-                        <input class="input100" type="password" name="password">
-                        <span class="focus-input100" data-placeholder="Password"></span>
-                    </div>
+    <body class=" login">
+        <!-- BEGIN : LOGIN PAGE 5-1 -->
+        <div class="user-login-5">
+            <div class="row bs-reset">
+                <div class="col-md-6 bs-reset mt-login-5-bsfix">
+                    <div class="login-bg" style="background-image:url(images/global/bg-login.jpg)">
+                </div></div>
 
-                    <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            Login
-                        </button>
-                    </div>
 
-                    <div class="login-more p-t-50">
-                        <span class="txt1">
-                                Don’t have an account? <a href="#" class="txt2">Sign up here!</a>
-                        </span>    
+                <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
+                    <div class="login-content">
+                        <h1 class="text-center">AMAN SIP</h1>
+                        <p class="text-center"> Aplikasi Manajemen Arsip </p>
+                        <form action="{{ route('login') }}" class="login-form" method="post">
+                        {{ csrf_field() }}
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-4">
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <input type="text" class="form-control" id="nip" name="nip">
+                                        <label for="nip">NIP</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-4">
+                                    <div class="form-group form-md-line-input form-md-floating-label">
+                                        <input type="password" class="form-control" id="password" name="password">
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-4">
+                                    <button class="btn btn-block blue" type="submit">Sign In</button>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top: 15px;">
+                                <div class="col-md-8">
+                                    <div class="create-account text-right">
+                                        <a href="javascript:;" id="create-account" class="create-account">Create Account</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- BEGIN FORGOT PASSWORD FORM -->
+                        <form class="forget-form" action="javascript:;" method="post">
+                            <h3 class="font-green">Forgot Password ?</h3>
+                            <p> Enter your e-mail address below to reset your password. </p>
+                            <div class="form-group">
+                                <input class="form-control placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
+                            <div class="form-actions">
+                                <button type="button" id="back-btn" class="btn green btn-outline">Back</button>
+                                <button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
+                            </div>
+                        </form>
+                        <!-- END FORGOT PASSWORD FORM -->
                     </div>
-                </form>
+                    <div class="login-footer">
+                        <div class="row bs-reset">
+                            <div class="col-xs-5 bs-reset">
+                            </div>
+                            <div class="col-xs-7 bs-reset">
+                                <div class="login-copyright text-right">
+                                    <p>Metronic template by: Keenthemes &copy;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    
+        <!-- END : LOGIN PAGE 5-1 -->
+        <!--[if lt IE 9]>
 
-    <div id="dropDownSelect1"></div>
-    
-<!--===============================================================================================-->
-    <script src="libraries/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-    <script src="libraries/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-    <script src="libraries/bootstrap/js/popper.js"></script>
-    <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-    <script src="libraries/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-    <script src="libraries/daterangepicker/moment.min.js"></script>
-    <script src="libraries/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-    <script src="libraries/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-    <script src="js/pages/auth.js"></script>
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="libraries/jquery.min.js" type="text/javascript"></script>
+        <script src="libraries/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="libraries/js.cookie.min.js" type="text/javascript"></script>
+        <script src="libraries/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="libraries/jquery.blockui.min.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="libraries/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="libraries/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+        <script src="libraries/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="js/global/app.min.js" type="text/javascript"></script>
+        <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="js/pages/login-5.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <!-- END THEME LAYOUT SCRIPTS -->
+    </body>
 
-</body>
 </html>

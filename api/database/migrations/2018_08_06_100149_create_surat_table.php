@@ -14,16 +14,21 @@ class CreateSuratTable extends Migration
     public function up()
     {
         Schema::create('surat', function (Blueprint $table) {
-            $table->unsignedInteger('id_dokumen');
-            $table->string('no_agenda');
-            $table->string('no_surat');
+            $table->unsignedInteger('id_dokumen')->primary();
+            $table->integer('jenis');
+            $table->integer('tipe_surat');
+            $table->string('tentang');
+            $table->string('nomor', 100)->unique();
             $table->string('kepada');
             $table->string('dari');
             $table->string('sifat');
             $table->string('disposisi');
+            $table->string('isi_disposisi');
+            $table->integer('klasifikasi');
+            $table->string('lampiran');
+            $table->string('perihal');
             $table->date('tanggal_surat');
             $table->string('file_surat');
-            $table->foreign('id_dokumen')->references('id_dokumen')->on('dokumen')->onDelete('cascade');
         });
     }
 

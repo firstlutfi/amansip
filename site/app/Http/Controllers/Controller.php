@@ -18,11 +18,6 @@ class Controller extends BaseController
     private $groupUrl = '';
     private $response = '';
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
     protected $redirectTo = '/';
 
 
@@ -31,7 +26,7 @@ class Controller extends BaseController
         $this->apiUrl = config('app.api_url');
     }
 
-    public function index(Request $request){
+    public function index(Request $request){ // base url
     	if ($request->session()->has('logged')) {
     		
     		return view('dashboard');
@@ -40,7 +35,11 @@ class Controller extends BaseController
     	}
     }
 
-    public function login(Request $request){
+    public function register(){
+        // todo
+    }
+
+    public function login(Request $request){  // user login
     	if (!$request->session()->has('logged')) {
             if($request->isMethod('post')){
                 if ($this->attemptLogin($request)) {
@@ -56,12 +55,7 @@ class Controller extends BaseController
         return redirect()->intended($this->redirectTo);
     }
 
-    public function register(){
-
-    }
-
-    public function logout(Request $request)
-    {
+    public function logout(Request $request){ // user logout
         $client = new Client();
 
         try {
@@ -89,9 +83,6 @@ class Controller extends BaseController
         }else{
         	dd("Logout failed");
         }
-        
-
-        
     }
 
     protected function attemptLogin(Request $request)
@@ -109,8 +100,6 @@ class Controller extends BaseController
         } catch (\GuzzleHttp\Exception\BadResponseException $e) {
             $response = $e->getResponse()->getBody()->getContents();
         }
-
-        //$username = session('account.fullName');
 
         $this->response = json_decode($response);
         
@@ -141,20 +130,5 @@ class Controller extends BaseController
         return redirect()->intended($this->redirectTo);
         //return view('dashboard.new-dashboard');
 
-    }
-
-    protected function sendFailedLoginResponse(Request $request)
-    {
-//        $errors = [$this->username() => trans('auth.failed')];
-//
-//        if ($request->expectsJson()) {
-//            return response()->json($errors, 422);
-//        }
-//
-//        return redirect()->back()
-//            ->withInput($request->only($this->username(), 'remember'))
-//            ->withErrors($errors);
-
-        return redirect()->back()->withErrors([$this->response->message]);
     }
 }

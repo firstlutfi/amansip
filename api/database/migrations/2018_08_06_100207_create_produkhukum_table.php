@@ -14,10 +14,11 @@ class CreateProdukhukumTable extends Migration
     public function up()
     {
         Schema::create('produkhukum', function (Blueprint $table) {
-            $table->unsignedInteger('id_dokumen');
-            $table->foreign('id_dokumen')->references('id_dokumen')->on('dokumen')->onDelete('cascade');
+            $table->unsignedInteger('id')->primary();
             $table->integer('jenis');
-            $table->string('no_produkhukum');
+            $table->string('nomor', 100)->unique();
+            $table->string('tentang');
+            $table->string('dengan');
             $table->date('tanggal_produkhukum');
             $table->string('file_produkhukum');
         });

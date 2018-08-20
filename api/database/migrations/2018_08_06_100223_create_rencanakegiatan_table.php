@@ -14,12 +14,14 @@ class CreateRencanakegiatanTable extends Migration
     public function up()
     {
         Schema::create('rencanakegiatan', function (Blueprint $table) {
-            $table->unsignedInteger('id_dokumen');
-            $table->foreign('id_dokumen')->references('id_dokumen')->on('dokumen')->onDelete('cascade');
+            $table->unsignedInteger('id_dokumen')->primary();
             $table->integer('jenis');
-            $table->string('tentang');
-            $table->date('tanggal_produkhukum');
-            $table->string('file_produkhukum');
+            $table->string('nama_kegiatan');
+            $table->string('waktu_pelaksanaan');
+            $table->date('tanggal_kegiatan');
+            $table->string('jumlah_anggaran');
+            $table->string('tujuan');
+            $table->string('file_kegiatan');
         });
     }
 

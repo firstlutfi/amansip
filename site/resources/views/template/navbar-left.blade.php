@@ -24,11 +24,26 @@
             <li class="heading">
                 <h3 class="uppercase">MENU</h3>
             </li>
-            <li class="nav-item  ">
-                <a href="page_general_blog_post.html" class="nav-link ">
+            <li class="nav-item start ">
+                <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-envelope"></i>
-                    <span class="title"> Surat </span>
+                    <span class="title">Surat</span>
+                    <span class="arrow"></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start ">
+                        <a href="{{ route('surat-masuk') }}" class="nav-link ">
+                            <i class="icon-arrow-down"></i>
+                            <span class="title">Surat Masuk</span>
+                        </a>
+                    </li>
+                    <li class="nav-item start ">
+                        <a href="{{ route('surat-keluar') }}" class="nav-link ">
+                            <i class="icon-arrow-up"></i>
+                            <span class="title">Surat Keluar</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item  ">
                 <a href="page_general_blog_post.html" class="nav-link ">

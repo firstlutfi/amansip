@@ -7,42 +7,31 @@ var Login = function() {
             errorClass: 'help-block', // default input error message class
             focusInvalid: false, // do not focus the last invalid input
             rules: {
-                username: {
+                nip: {
                     required: true
                 },
                 password: {
                     required: true
                 },
-                remember: {
-                    required: false
-                }
             },
 
             messages: {
-                username: {
-                    required: "Username is required."
+                nip: {
+                    required: ""
                 },
                 password: {
-                    required: "Password is required."
+                    required: ""
                 }
-            },
-
-            invalidHandler: function(event, validator) { //display error alert on form submit   
-                $('.alert-danger', $('.login-form')).show();
             },
 
             highlight: function(element) { // hightlight error inputs
                 $(element)
-                    .closest('.form-group').addClass('has-error'); // set error class to the control group
+                    .closest('.form-group').addClass(''); // set error class to the control group
             },
 
             success: function(label) {
                 label.closest('.form-group').removeClass('has-error');
                 label.remove();
-            },
-
-            errorPlacement: function(error, element) {
-                error.insertAfter(element.closest('.input-icon'));
             },
 
             submitHandler: function(form) {
@@ -70,11 +59,11 @@ var Login = function() {
 
         $('#forget-password').click(function(){
             $('.login-form').hide();
-            $('.forget-form').show();
+            $('.forget-form').show(500);
         });
 
         $('#back-btn').click(function(){
-            $('.login-form').show();
+            $('.login-form').show(500);
             $('.forget-form').hide();
         });
     }
@@ -87,17 +76,7 @@ var Login = function() {
         init: function() {
 
             handleLogin();
-
-            // init background slide images
-            $('.login-bg').backstretch([
-                "../assets/pages/img/login/bg1.jpg",
-                "../assets/pages/img/login/bg2.jpg",
-                "../assets/pages/img/login/bg3.jpg"
-                ], {
-                  fade: 1000,
-                  duration: 8000
-                }
-            );
+            
 
             $('.forget-form').hide();
 
