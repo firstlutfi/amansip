@@ -14,6 +14,8 @@ class ProdukHukum extends Model
    * Table database
    */
   protected $table = 'produkhukum';
+  protected $primaryKey = 'id_dokumen';
+  public $timestamps = false;
 
   /**
    * The attributes that are mass assignable.
@@ -21,14 +23,13 @@ class ProdukHukum extends Model
    * @var array
    */
   protected $fillable = [
-    'id_dokumen', 'jenis', 'no_produkhukum', 'tanggal_produkhukum', 'file_produkhukum',
+    'id_dokumen', 'jenis', 'nomor', 'tentang', 'dengan', 'tanggal_produkhukum', 'file_produkhukum', 'created_by'
   ];
 
   /**
    * One to one relationships
    */
-  public function dokumen()
-  {
-    return $this->hasOne('App\Dokumen', 'id_dokumen');
+  public function user(){
+    return $this->belongsTo('App\User', 'created_by');
   }
 }

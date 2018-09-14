@@ -32,7 +32,8 @@
         <script src="libraries/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="libraries/js.cookie.min.js" type="text/javascript"></script>
         <script src="libraries/jquery.blockui.min.js" type="text/javascript"></script>
-        <script src="js/global/app.min.js" type="text/javascript"></script>
+        <script src="libraries/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+        <script src="js/global/app.js" type="text/javascript"></script>
         <script src="js/global/layout.min.js" type="text/javascript"></script>
         <!-- END CORE PLUGINS -->
         

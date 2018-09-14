@@ -46,19 +46,19 @@
                 </ul>
             </li>
             <li class="nav-item  ">
-                <a href="page_general_blog_post.html" class="nav-link ">
+                <a href="{{ route('rencana') }}" class="nav-link ">
                     <i class="icon-list"></i>
-                    <span class="title"> Rencana </span>
+                    <span class="title"> Rencana Kegiatan </span>
                 </a>
             </li>
             <li class="nav-item  ">
-                <a href="page_general_blog_post.html" class="nav-link ">
+                <a href="{{ route('dokumen') }}" class="nav-link ">
                     <i class="icon-note"></i>
-                    <span class="title"> Kegiatan </span>
+                    <span class="title"> Dokumen Kegiatan </span>
                 </a>
             </li>
             <li class="nav-item  ">
-                <a href="page_general_blog_post.html" class="nav-link ">
+                <a href="{{ route('produkhukum') }}" class="nav-link ">
                     <i class="icon-graduation"></i>
                     <span class="title"> Produk Hukum </span>
                 </a>
@@ -66,12 +66,12 @@
             <li class="heading">
                 <h3 class="uppercase">PROFIL</h3>
             </li>
-            <li class="nav-item  ">
+            {{-- <li class="nav-item  ">
                 <a href="page_general_blog_post.html" class="nav-link ">
                     <i class="icon-user"></i>
                     <span class="title"> Profil Saya </span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item  ">
                 <a href="{{ route('logout') }}" class="nav-link ">
                     <i class="icon-logout"></i>

@@ -27,4 +27,29 @@ $router->get('/surat-keluar/get-all', 'SuratController@getAllSuratKeluar');
 $router->get('/surat/get/{id}', 'SuratController@getOne');
 $router->post('/surat/create', 'SuratController@create');
 $router->post('/surat/update', 'SuratController@update');
-$router->post('/surat/delete', 'SuratController@delete');
+$router->get('/surat/delete/{id}', 'SuratController@delete');
+// endregion
+
+// Region Rencana
+$router->get('/rencana/get-all', 'RencanaController@getAllRencana');
+$router->get('/rencana/get/{id}', 'RencanaController@getOne');
+$router->post('/rencana/create', 'RencanaController@create');
+$router->post('/rencana/update', 'RencanaController@update');
+$router->get('/rencana/delete/{id}', 'RencanaController@delete');
+// endregion
+
+// Region Dokumen
+$router->get('/dokumen/get-all', 'DokumenController@getAllDokumen');
+$router->get('/dokumen/get/{id}', 'DokumenController@getOne');
+$router->post('/dokumen/create', 'DokumenController@create');
+$router->post('/dokumen/update', 'DokumenController@update');
+$router->get('/dokumen/delete/{id}', 'DokumenController@delete');
+// endregion
+
+// Region Produk Hukum
+$router->get('/produkhukum/get-all', 'ProdukHukumController@getAllProdukHukum');
+$router->get('/produkhukum/get/{id}', 'ProdukHukumController@getOne');
+$router->post('/produkhukum/create', 'ProdukHukumController@create');
+$router->post('/produkhukum/update', 'ProdukHukumController@update');
+$router->get('/produkhukum/delete/{id}', 'ProdukHukumController@delete');
+// endregion

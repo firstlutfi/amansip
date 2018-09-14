@@ -14,7 +14,7 @@ class CreateSuratTable extends Migration
     public function up()
     {
         Schema::create('surat', function (Blueprint $table) {
-            $table->unsignedInteger('id_dokumen')->primary();
+            $table->increments('id_dokumen');
             $table->integer('jenis');
             $table->integer('tipe_surat');
             $table->string('tentang');
@@ -29,6 +29,8 @@ class CreateSuratTable extends Migration
             $table->string('perihal');
             $table->date('tanggal_surat');
             $table->string('file_surat');
+            $table->string('created_by', 20)->nullable();
+            $table->foreign('created_by')->references('nip')->on('users')->onDelete('cascade');
         });
     }
 

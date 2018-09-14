@@ -29,4 +29,20 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password', 'api_token'
     ];
+
+    public function surat(){
+        return $this->hasMany('App\Surat');
+    }
+
+    public function dokumenKegiatan(){
+        return $this->hasMany('App\DokumenKegiatan');
+    }
+
+    public function produkHukum(){
+        return $this->hasMany('App\ProdukHukum');
+    }
+
+    public function rencanaKegiatan(){
+        return $this->hasMany('App\RencanKegiatan');
+    }
 }

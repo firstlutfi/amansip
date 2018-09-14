@@ -33,6 +33,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="libraries/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
         <link href="libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="libraries/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css">
+        <link href="libraries/sweetalert/sweetalert2.min.css" rel="stylesheet" type="text/css">
         <link href="css/global/components-md.min.css" rel="stylesheet" id="style_components" type="text/css">
         <link href="css/global/plugins-md.min.css" rel="stylesheet" type="text/css">
         <link href="css/global/layout.min.css" rel="stylesheet" type="text/css">

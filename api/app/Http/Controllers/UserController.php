@@ -27,6 +27,7 @@ class UserController extends Controller
                     $res['message'] = 'Login sucessful';
                     $res['api_token'] = $api_token;
                     $res['data'] = $login;
+                    $request->session()->put('nip',$login->nip);
                     
                     return response($res);
                 }
@@ -78,9 +79,10 @@ class UserController extends Controller
         $delete_token = User::where('nip', $login->nip)->update(['api_token' => null]);
 
         if ($delete_token) {
+
                   $res['success'] = true;
                   $res['message'] = 'Logout sucessful';
-                  
+                  $request->session()->flush();
                   return response($res);
               }else{
               $res['success'] = false;

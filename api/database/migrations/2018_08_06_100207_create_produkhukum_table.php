@@ -14,13 +14,15 @@ class CreateProdukhukumTable extends Migration
     public function up()
     {
         Schema::create('produkhukum', function (Blueprint $table) {
-            $table->unsignedInteger('id')->primary();
+            $table->increments('id_dokumen');
             $table->integer('jenis');
             $table->string('nomor', 100)->unique();
             $table->string('tentang');
             $table->string('dengan');
             $table->date('tanggal_produkhukum');
             $table->string('file_produkhukum');
+            $table->string('created_by', 20);
+            $table->foreign('created_by')->references('nip')->on('users')->onDelete('cascade');
         });
     }
 

@@ -14,7 +14,7 @@ class CreateDokumenkegiatanTable extends Migration
     public function up()
     {
         Schema::create('dokumenkegiatan', function (Blueprint $table) {
-            $table->unsignedInteger('id_dokumen')->primary();
+            $table->increments('id_dokumen');
             $table->integer('jenis');
             $table->string('nama_kegiatan');
             $table->string('lampiran');
@@ -27,6 +27,8 @@ class CreateDokumenkegiatanTable extends Migration
             $table->string('dasar');
             $table->string('isi');
             $table->string('file_kegiatan');
+            $table->string('created_by', 20);
+            $table->foreign('created_by')->references('nip')->on('users')->onDelete('cascade');
         });
     }
 

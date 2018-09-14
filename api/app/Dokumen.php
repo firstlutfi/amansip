@@ -13,8 +13,9 @@ class Dokumen extends Model
   /**
    * Table database
    */
-  protected $table = 'dokumen';
+  protected $table = 'dokumenkegiatan';
   protected $primaryKey = 'id_dokumen';
+  public $timestamps = false;
 
   /**
    * The attributes that are mass assignable.
@@ -22,29 +23,13 @@ class Dokumen extends Model
    * @var array
    */
   protected $fillable = [
-    'id_dokumen', 'jenis_dokumen', 'created_by',
+    'id_dokumen', 'jenis', 'nama_kegiatan', 'tanggal_kegiatan', 'file_kegiatan', 'lampiran', 'nomor', 'tempat_kegiatan', 'pimpinan', 'acara', 'dasar', 'isi', 'created_by'
   ];
 
   /**
    * One to one relationships
    */
-  public function dokumenKegiatan()
-  {
-    return $this->hasMany('App\DokumenKegiatan');
-  }
-
-  public function produkHukum()
-  {
-    return $this->hasMany('App\ProdukHukum');
-  }
-
-  public function rencanaKegiatan()
-  {
-    return $this->hasMany('App\RencanKegiatan');
-  }
-
-  public function surat()
-  {
-    return $this->hasMany('App\Surat');
+  public function user(){
+    return $this->belongsTo('App\User', 'created_by');
   }
 }

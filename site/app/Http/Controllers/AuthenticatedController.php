@@ -17,9 +17,8 @@ class AuthenticatedController extends Controller
 
     // region constructor
     public function __construct() {
-
-        parent::__construct();
-
+        
+        dd(session('logged'));
     }
     // endregion
 

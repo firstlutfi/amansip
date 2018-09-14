@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Model dokumen
  */
-class RencanaKegiatan extends Model
+class Rencana extends Model
 {
 
   /**
    * Table database
    */
   protected $table = 'rencanakegiatan';
+  protected $primaryKey = 'id_dokumen';
+  public $timestamps = false;
 
   /**
    * The attributes that are mass assignable.
@@ -21,14 +23,13 @@ class RencanaKegiatan extends Model
    * @var array
    */
   protected $fillable = [
-    'id_dokumen', 'jenis', 'tentang', 'tanggal_rencana', 'file_rencana',
+    'id_dokumen', 'jenis', 'nama_kegiatan', 'waktu_pelaksanaan', 'tanggal_kegiatan', 'jumlah_anggaran', 'tujuan', 'file_kegiatan', 'created_by'
   ];
 
   /**
    * One to one relationships
    */
-  public function dokumen()
-  {
-    return $this->hasOne('App\Dokumen', 'id_dokumen');
+  public function user(){
+    return $this->belongsTo('App\User', 'created_by');
   }
 }

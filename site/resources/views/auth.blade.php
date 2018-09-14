@@ -59,7 +59,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                 <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                     <div class="login-content">
-                        <h1 class="text-center">AMAN SIP</h1>
+                        <h1 class="text-center">AMAN DB SIP</h1>
                         <p class="text-center"> Aplikasi Manajemen Arsip </p>
                         <form action="{{ route('login') }}" class="login-form" method="post">
                         {{ csrf_field() }}
@@ -67,7 +67,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="col-md-4 col-md-offset-4">
                                     <div class="form-group form-md-line-input form-md-floating-label">
                                         <input type="text" class="form-control" id="nip" name="nip">
-                                        <label for="nip">NIP</label>
+                                        <label for="nip">NIP / NRP</label>
                                     </div>
                                 </div>
                             </div>

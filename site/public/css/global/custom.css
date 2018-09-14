@@ -2,3 +2,11 @@
 body {
     font-family: 'Nunito', sans-serif !important;
 }
+
+.blockOverlay{
+	z-index: 12000 !important;
+}
+
+.blockMsg.blockPage{
+	z-index: 12050 !important;
+}

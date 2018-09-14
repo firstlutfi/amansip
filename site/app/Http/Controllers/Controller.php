@@ -28,11 +28,18 @@ class Controller extends BaseController
 
     public function index(Request $request){ // base url
     	if ($request->session()->has('logged')) {
-    		
     		return view('dashboard');
     	}else{
     		return view('auth');
     	}
+    }
+
+    public function authenticate(Request $request){
+        if ($request->session()->has('logged')) {
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function register(){

@@ -71,6 +71,21 @@ $app->routeMiddleware([
 
 $app->register(App\Providers\AuthServiceProvider::class);
 
+$app->configure('session');
+$app->bind(Illuminate\Session\SessionManager::class, function ($app) {    
+
+    return $app->make('session');
+
+});
+
+$app->middleware([
+
+    'Illuminate\Session\Middleware\StartSession'
+
+]);
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -81,6 +96,7 @@ $app->register(App\Providers\AuthServiceProvider::class);
 | totally optional, so you are not required to uncomment this line.
 |
 */
+$app->register(Illuminate\Session\SessionServiceProvider::class);
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
